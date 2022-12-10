@@ -1,4 +1,37 @@
-# Especificaciones de la Rosa Dorada (Gilded Rose)
+# Nuestro Readme
+
+ + Articulos
+	  - `sellIn`  numero de dias para vender
+	  - `quality` es el  precio, siempre >= 0 y < 50  (menos sulfuras y articulos legendados = 80)
+	  - `updateQuality` método para decrementar ambos valores cada dia
+
+ + Cuando  ( SellIn <= 0 ) quality se degrada al doble de velocidad
+
+
++ `Queso Brie`
+  - incrementa quality cuando sellIn > 0 cada vez que sellIn decrementa quality aumenta 1 una por dia.
+    + cuando sellIn = 0 aumenta 2
+
+
++ `Sulfuras` _(artículo legendario)_ sellin y quality inmutables 
+
++ `Entrada al Backstage`
+	- if ( sellin <= 10 )  entonces  quality  se incrementa de 2 en 2
+	- if ( sellin <= 5  )  entonces  quality  se incrementa de 3 en 3
+	- if ( sellin = 0   )  entonces  quality  = 0
+
+
+
+
+Los artículos conjurados degradan su calidad al doble de velocidad que los normales
+
+
+
+<!--  
+
+ # Readme Anterior
+
+ # Especificaciones de la Rosa Dorada (Gilded Rose)
 
 Bienvenido al equipo de **Gilded Rose**.
 Como quizá sabes, somos una pequeña posada ubicada estratégicamente en una prestigiosa ciudad, atendida por la amable **Allison**.
@@ -43,3 +76,6 @@ Siéntete libre de realizar cualquier cambio al mensaje `updateQuality` y agrega
 ## Notas finales
 
 Para aclarar: un artículo nunca puede tener una `calidad` superior a `50`, sin embargo las Sulfuras siendo un artículo legendario posee una calidad inmutable de `80`.
+
+
+ -->
