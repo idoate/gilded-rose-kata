@@ -9,13 +9,14 @@
 
 
 + `Queso Brie`
-  - incrementa quality cuando sellIn > 0 cada vez que sellIn decrementa quality aumenta 1 una por dia.
-    + cuando sellIn = 0 aumenta 2
+  - Cada vez que sellIn decrementa, quality aumenta 1 unidad por dia cuando sellin > 0
+  - cuando sellIn = 0 aumenta 2
 
 
 + `Sulfuras` _(artículo legendario)_ sellin y quality inmutables 
 
 + `Entrada al Backstage`
+	- if ( sellin >  10 )  entonces  quality  se incrementa de 1 en 1
 	- if ( sellin <= 10 )  entonces  quality  se incrementa de 2 en 2
 	- if ( sellin <= 5  )  entonces  quality  se incrementa de 3 en 3
 	- if ( sellin = 0   )  entonces  quality  = 0
