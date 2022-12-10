@@ -49,13 +49,13 @@ describe("Gilded Rose", function () {
       expect(updatedItems[0].quality).toEqual(50);
     });
 
-    it("should decrease two unit of quality when product is expired ", function () {
+    it("should increase two unit of quality when product is expired ", function () {
       const gildedRose = new GildedRose([new Item("Aged Brie", 0, 20)]);
       const updatedItems = gildedRose.updateQuality();
       expect(updatedItems[0].quality).toEqual(22);
     });
 
-    it("should decrease two unit of quality when product is expired ", function () {
+    it("quality should not change when quality is 50 and  expired ", function () {
       const gildedRose = new GildedRose([new Item("Aged Brie", 0, 50)]);
       const updatedItems = gildedRose.updateQuality();
       expect(updatedItems[0].quality).toEqual(50);
