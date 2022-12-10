@@ -1,10 +1,7 @@
 import { Item, GildedRose } from "../app/gilded-rose";
 
 describe("Gilded Rose", function () {
-  let allItems = {
-    normalItem: new Item("Normal Item", 10, 20),
-    expiredNormalItem: new Item(" 0 Sell days Item", 0, 20),
-   }
+  let allItems ;
   beforeEach (() => {
     allItems = {
       normalItem: new Item("Normal Item", 10, 20),
