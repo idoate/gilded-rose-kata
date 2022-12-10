@@ -88,7 +88,4 @@ describe("Gilded Rose", function () {
 
     });
   });
-
-
-
 });
