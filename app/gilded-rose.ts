@@ -63,11 +63,12 @@ export class GildedRose {
   }
 
   updateProduct(item) {
-    const isExpired = item.sellIn < 0; // Guardamos en un booleano si esta expirado o no, en si a veces cunde mas que hacer funciones
+    
     if (this.isSulfuras(item.name)) {
       return item;
     }
     item.sellIn = item.sellIn - 1;
+    const isExpired = item.sellIn < 0; // Guardamos en un booleano si esta expirado o no, en si a veces cunde mas que hacer funciones
     if (this.isAgedBrie(item.name)) {
       if (item.sellIn <= 0) {
         item.quality = this.increaseQuality(item.quality, 2);
@@ -85,20 +86,19 @@ export class GildedRose {
       if (item.sellIn < 6) {
         item.quality = this.increaseQuality(item.quality, 1);
       }
-      if (item.sellIn < 0) {
+      if (isExpiredt) {
         item.quality = 0;
       }
       return item;
     }
     if (this.isNormalProduct(item.name)) {
-      item.quality = this.decreaseQuality(item.quality, 1);
-    }
-    if (item.sellIn < 0) {
-      if (!this.isBackstage(item.name)) {
+      if (isExpired) {
+        item.quality = this.decreaseQuality(item.quality, 2);
+      } else{
         item.quality = this.decreaseQuality(item.quality, 1);
-      } else {
+
       }
+      return item;
     }
-    return item;
   }
 }
