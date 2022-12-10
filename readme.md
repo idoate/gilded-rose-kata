@@ -3,7 +3,7 @@
  + Articulos
 	  - `sellIn`  numero de dias para vender
 	  - `quality` es el  precio, siempre >= 0 y < 50  (menos sulfuras y articulos legendados = 80)
-	  - `updateQuality` método para decrementar ambos valores cada dia
+	  - `updateQuality` método para decrementar en una unidad ambos valores cada dia
 
  + Cuando  ( SellIn <= 0 ) quality se degrada al doble de velocidad
 
