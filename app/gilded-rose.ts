@@ -77,24 +77,26 @@ export class GildedRose {
       }
       return item;
     }
+    if (this.isBackstage(item.name)) {
+      item.quality = this.increaseQuality(item.quality, 1);
+      if (item.sellIn < 11) {
+        item.quality = this.increaseQuality(item.quality, 1);
+      }
+      if (item.sellIn < 6) {
+        item.quality = this.increaseQuality(item.quality, 1);
+      }
+      if (item.sellIn < 0) {
+        item.quality = 0;
+      }
+      return item;
+    }
     if (this.isNormalProduct(item.name)) {
       item.quality = this.decreaseQuality(item.quality, 1);
-    } else {
-      item.quality = this.increaseQuality(item.quality, 1);
-      if (this.isBackstage(item.name)) {
-        if (item.sellIn < 11) {
-          item.quality = this.increaseQuality(item.quality, 1);
-        }
-        if (item.sellIn < 6) {
-          item.quality = this.increaseQuality(item.quality, 1);
-        }
-      }
     }
     if (item.sellIn < 0) {
       if (!this.isBackstage(item.name)) {
         item.quality = this.decreaseQuality(item.quality, 1);
       } else {
-        item.quality = 0;
       }
     }
     return item;
