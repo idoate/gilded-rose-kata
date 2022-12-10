@@ -86,7 +86,7 @@ export class GildedRose {
       if (item.sellIn < 6) {
         item.quality = this.increaseQuality(item.quality, 1);
       }
-      if (isExpiredt) {
+      if (isExpired) {
         item.quality = 0;
       }
       return item;
